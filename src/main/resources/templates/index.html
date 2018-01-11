@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+body{
+	margin-top:20%;
+	margin-left:40%;
+}
+</style>
+<body>
+<form id="delivery_info" action="/delivery_info_input">
+	<div>
+		택배사: <select name="deliveryVendor"><option value="kg">kg로지스</option></select>
+	</div></br>
+	
+	<div>
+	송장 번호: <input type="text" name="invoice">
+	<input id="inputBtn" type="button" value="입력">	
+	</div>
+</form>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+	$(document).ready(function(){
+		$("#inputBtn").click(function(){
+			$("#delivery_info").submit();
+			console.log("submit");
+		});
+	});
+</script>
+</body>
+</html>
