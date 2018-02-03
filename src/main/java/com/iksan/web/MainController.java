@@ -1,6 +1,8 @@
 package com.iksan.web;
 
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -65,7 +67,10 @@ public class MainController {
 
 		String vendor = deliveryInfo.getDeliveryVendor();		
 		System.out.println(deliveryInfo.getInvoice());
-		deliveryInfoService.DeliveryInfoSearch(deliveryInfo);
+	
+		ArrayList<String> res = deliveryInfoService.DeliveryInfoSearch(deliveryInfo);
+		System.out.println("res:");
+		System.out.println(res);
 		return null;
 
 		//ModelAndView modelAndView = new ModelAndView();
